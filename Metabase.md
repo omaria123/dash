@@ -1,5 +1,26 @@
 # Отчет: Интерактивный финансовый дашборд в Metabase
 
+## 0. Создание базы данных для задания 
+```sql
+USE bank_db;
+LOAD DATA INFILE '/var/lib/mysql-files/bank_transaction.csv'
+INTO TABLE bank_transaction
+CHARACTER SET utf8mb4
+FIELDS TERMINATED BY ','
+IGNORE 1 ROWS;
+TRUNCATE TABLE bank_transaction;
+LOAD DATA INFILE '/var/lib/mysql-files/bank_transaction.csv'
+INTO TABLE bank_transaction
+CHARACTER SET utf8mb4
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+IGNORE 1 ROWS;
+```
+<img width="1685" height="599" alt="image" src="https://github.com/user-attachments/assets/ff6554e9-f8d7-4bbc-9849-a35e6ecfe510" />
+<img width="921" height="795" alt="image" src="https://github.com/user-attachments/assets/0f70e00e-7d50-48bf-bd6b-3096c7dad12d" />
+
+---
+
 ## 1. Общий вид дашборда
 <img width="1389" height="851" alt="image" src="https://github.com/user-attachments/assets/b9ed094c-8c07-4bf9-8e96-b1cd29ab424c" />
 <img width="1498" height="762" alt="image" src="https://github.com/user-attachments/assets/796246e3-63e8-4d7c-8c36-335ce0e8f4fa" />
@@ -103,6 +124,8 @@ GROUP BY month, category;
 ## 3. Кросс-фильтры
 <img width="1846" height="746" alt="image" src="https://github.com/user-attachments/assets/99d996f4-0401-4afb-a4e1-d77910cbcf42" />
 <img width="1838" height="741" alt="image" src="https://github.com/user-attachments/assets/ebee4a98-b574-4a7f-a9d3-64babc2d9a38" />
+
+---
 
 ## 4. Фильтры
 <img width="1845" height="724" alt="image" src="https://github.com/user-attachments/assets/3babc1a3-23d2-4056-85e9-41bc5cb59a08" />
